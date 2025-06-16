@@ -1,5 +1,4 @@
 // components/Skills.jsx
-import React from "react";
 import {
   Box,
   Heading,
@@ -31,7 +30,6 @@ const skills = [
 
 const SkillCard = ({ skill }) => {
   const bg = useColorModeValue("white", "gray.700");
-  const progressBg = useColorModeValue("primary.500", "primary.300");
 
   return (
     <MotionBox

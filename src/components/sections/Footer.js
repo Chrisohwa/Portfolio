@@ -4,7 +4,6 @@ import {
   Box,
   Flex,
   Text,
-  Link,
   IconButton,
   useColorModeValue,
 } from "@chakra-ui/react";

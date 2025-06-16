@@ -1,5 +1,4 @@
-import React from "react";
-import PropTypes from "prop-types";
+
 import {
   Box,
   Heading,
@@ -20,7 +19,6 @@ console.log(dataAnalysis, frontEnd);
 
 const ProjectCard = ({ image, title, description, technologies }) => {
   const bg = useColorModeValue("white", "gray.700");
-  const hoverBg = useColorModeValue("gray.50", "gray.600");
 
   return (
     <MotionBox
