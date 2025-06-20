@@ -12,7 +12,7 @@ export const frontEnd = [
     title: "My Portfolio",
     description:
       "A personal portfolio to showcase projects, resume, and contact information.",
-    link: "https://cohwaportfolio.netlify.app",
+    link: "https://chrisohwaportfolio.vercel.app",
     image: "/portfolio-cover.jpg",
   },
   {
