@@ -1,4 +1,3 @@
-
 import {
   Box,
   Heading,
@@ -12,57 +11,54 @@ import { motion } from "framer-motion";
 import ProjectLayout from "../Layouts/ProjectLayout";
 import { useTab } from "../../store/tabContext"; // import context hook
 import { frontEnd, dataAnalysis } from "../common/constant";
+import { Link } from "@chakra-ui/react";
 
 const MotionBox = motion(Box);
 const MotionSimpleGrid = motion(SimpleGrid);
 console.log(dataAnalysis, frontEnd);
 
-const ProjectCard = ({ image, title, description, technologies }) => {
+const ProjectCard = ({ image, title, description, link }) => {
   const bg = useColorModeValue("white", "gray.700");
 
   return (
-    <MotionBox
-      bg={bg}
-      borderRadius="lg"
-      overflow="hidden"
-      boxShadow="md"
-      whileHover={{ translateY: -5 }}
-      transition={{ duration: 0.3 }}
+    <Link
+      href={link}
+      isExternal
+      target="_blank"
+      rel="noopener noreferrer"
+      _hover={{ textDecoration: "none" }}
     >
-      <Box h="200px" overflow="hidden">
-        <Skeleton isLoaded={true} width="100%" height="100%">
-          <Box
-            as="img"
-            src={image}
-            alt={`Screenshot of ${title}`}
-            w="100%"
-            h="100%"
-            objectFit="cover"
-            transition="transform 0.3s"
-            _hover={{ transform: "scale(1.05)" }}
-          />
-        </Skeleton>
-      </Box>
-      <Box p={6}>
-        <Heading as="h3" size="md" mb={2}>
-          {title}
-        </Heading>
-        <Text mb={4}>{description}</Text>
-        <Box display="flex" flexWrap="wrap">
-          {technologies.map((tech) => (
-            <Badge
-              key={tech}
-              mr={2}
-              mb={2}
-              colorScheme="primary"
-              variant="subtle"
-            >
-              {tech}
-            </Badge>
-          ))}
+      <MotionBox
+        bg={bg}
+        borderRadius="lg"
+        overflow="hidden"
+        boxShadow="md"
+        whileHover={{ translateY: -5 }}
+        transition={{ duration: 0.3 }}
+        cursor="pointer"
+      >
+        <Box h="200px" overflow="hidden">
+          <Skeleton isLoaded={true} width="100%" height="100%">
+            <Box
+              as="img"
+              src={image}
+              alt={`Screenshot of ${title}`}
+              w="100%"
+              h="100%"
+              objectFit="cover"
+              transition="transform 0.3s"
+              _hover={{ transform: "scale(1.05)" }}
+            />
+          </Skeleton>
         </Box>
-      </Box>
-    </MotionBox>
+        <Box p={6}>
+          <Heading as="h3" size="md" mb={2}>
+            {title}
+          </Heading>
+          <Text mb={1}>{description}</Text>
+        </Box>
+      </MotionBox>
+    </Link>
   );
 };
 
@@ -75,13 +71,13 @@ const FeProjects = () => (
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
   >
-    {frontEnd.map(({ image, title, description, technologies, id }) => (
+    {frontEnd.map(({ image, title, description, id, link }) => (
       <ProjectCard
         key={id}
         image={image}
         title={title}
         description={description}
-        technologies={technologies}
+        link={link}
       />
     ))}
   </MotionSimpleGrid>
@@ -102,13 +98,13 @@ const DaProjects = () => (
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      {dataAnalysis.map(({ image, title, description, technologies, id }) => (
+      {dataAnalysis.map(({ image, title, description, link, id }) => (
         <ProjectCard
           key={id}
           image={image}
           title={title}
           description={description}
-          technologies={technologies}
+          link={link}
         />
       ))}
     </MotionSimpleGrid>

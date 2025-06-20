@@ -1,85 +1,76 @@
 export const ProjectTabs = [
-  { label: "Front End Developer", value: 1  },
-  { label: "Data Analytics", value : 2  },
+  { label: "Front End Developer", value: 1 },
+  { label: "Data Analytics", value: 2 },
 ];
 
+// yungbils@gmail.com
+// Bilal!@#123
 
 export const frontEnd = [
   {
     id: 1,
-    title: "E-commerce Platform",
+    title: "My Portfolio",
     description:
-      "A full-featured e-commerce platform with product listings, cart, checkout, and Stripe payment integration.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    image:
-      "https://images.unsplash.com/photo-1581093588401-22f1a7f52b7c?auto=format&fit=crop&w=800&q=80",
+      "A personal portfolio to showcase projects, resume, and contact information.",
+    link: "https://cohwaportfolio.netlify.app",
+    image: "/portfolio-cover.jpg",
   },
   {
     id: 2,
-    title: "Task Management App",
-    description:
-      "A productivity tool for managing personal and team tasks with drag-and-drop functionality and real-time sync.",
-    technologies: ["React", "Firebase", "Chakra UI", "React DnD"],
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b1?auto=format&fit=crop&w=800&q=80",
+    title: "Fund Laraweb App",
+    description: "A webapp created to fund Lara's teratment",
+    link: "http://savelara.wuaze.com/",
+    image: "/savelara.jpg",
   },
   {
     id: 3,
-    title: "Weather Dashboard",
+    title: "Transcapital Website",
+    link: "https://transalliancecapital.ng/",
     description:
-      "Real-time weather updates and 5-day forecast for user-selected locations using the OpenWeather API.",
-    technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
-    image:
-      "https://images.unsplash.com/photo-1612837017391-b725d0a6e948?auto=format&fit=crop&w=800&q=80",
+      "Official website for transcapital, a subsidiary of Transalliance Group",
+    image: "/transcap.png",
   },
   {
     id: 4,
-    title: "Portfolio Website",
+    title: "Fazo CRM",
+    link: "https://fazo-crm-app.netlify.app/",
     description:
-      "A personal portfolio to showcase projects, resume, and contact information with responsive design.",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-    image:
-      "https://images.unsplash.com/photo-1532619675605-1b4a08b6eacb?auto=format&fit=crop&w=800&q=80",
+      "A CRM web application that manages the activities and operations of Fazo",
+    image: "/Fazo.png",
+  },
+  {
+    id: 5,
+    title: "Mondu",
+    link: "https://mondu-app.netlify.app/",
+    description:
+      "A payment solution for that handles foreign currency change and payments",
+    image: "/mondu.png",
   },
 ];
-
-
 
 export const dataAnalysis = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description:
-      "A full-featured e-commerce platform with product listings, cart, checkout, and Stripe payment integration.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-    image:
-      "https://images.unsplash.com/photo-1581093588401-22f1a7f52b7c?auto=format&fit=crop&w=800&q=80",
+    title: "Kriscom-BI-sales-report",
+    image: "/Dashboardimage1.jpg",
+    description: "A Report analysing sales performance for kriscom LTD",
+    link: "https://github.com/ocarslyobas/Kriscom-BI-sales-report/blob/main/B%20I%20sales%20dashboards/kriscom%20sales.pbix",
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "We rate dogs",
+    image: "/Dogratings.jpg",
     description:
-      "A productivity tool for managing personal and team tasks with drag-and-drop functionality and real-time sync.",
-    technologies: ["React", "Firebase", "Chakra UI", "React DnD"],
-    image:
-      "https://images.unsplash.com/photo-1605902711622-cfb43c4437b1?auto=format&fit=crop&w=800&q=80",
+      "An analysis to uncover ratings of different dog breed.",
+    link: "https://github.com/ocarslyobas/We-rate-Dog-ALXproject2",
   },
   {
     id: 3,
-    title: "Weather Dashboard",
+    title: "FordGoBike",
+    image: "/Fordbikeimage.jpg",
     description:
-      "Real-time weather updates and 5-day forecast for user-selected locations using the OpenWeather API.",
-    technologies: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
-    image:
-      "https://images.unsplash.com/photo-1612837017391-b725d0a6e948?auto=format&fit=crop&w=800&q=80",
+      "FordGoBike bike analysis of the  greater San Fransisco bay area.",
+    link: "https://github.com/ocarslyobas/FordGoBike-Project-Alx3",
   },
-  {
-    id: 4,
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio to showcase projects, resume, and contact information with responsive design.",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-    image:
-      "https://images.unsplash.com/photo-1532619675605-1b4a08b6eacb?auto=format&fit=crop&w=800&q=80",
-  },
+
 ];
