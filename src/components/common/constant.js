@@ -36,7 +36,7 @@ export const frontEnd = [
     link: "https://fazo-crm-app.netlify.app/",
     description:
       "A CRM web application that manages the activities and operations of Fazo",
-    image: "/Fazo.png",
+    image: "/Fazo-cover.png",
   },
   {
     id: 5,
@@ -45,6 +45,27 @@ export const frontEnd = [
     description:
       "A payment solution for that handles foreign currency change and payments",
     image: "/mondu.png",
+  },
+  {
+    id: 6,
+    title: "TAG-Website",
+    link: "https://transalliance.ng",
+    description: "Officikal website for the transalliance Group",
+    image: "/TAGlogo.png",
+  },
+  {
+    id: 7,
+    title: "Alliance-Pay",
+    link: "https://www.alliancepay.io/",
+    description: "Official website for the Alliance pay payment gateway",
+    image: "/APlogo.png",
+  },
+  {
+    id: 8,
+    title: "Email-signature",
+    link: "https://email-signatures-ten.vercel.app/",
+    description: "Email signatures for the Transalliance Subsidiaries",
+    image: "/TAGlogo.png",
   },
 ];
 
