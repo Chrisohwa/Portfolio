@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Box,
   Heading,
@@ -6,16 +7,16 @@ import {
   useColorModeValue,
   Badge,
   Skeleton,
+  Button,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import ProjectLayout from "../Layouts/ProjectLayout";
-import { useTab } from "../../store/tabContext"; // import context hook
+import { useTab } from "../../store/tabContext";
 import { frontEnd, dataAnalysis } from "../common/constant";
 import { Link } from "@chakra-ui/react";
 
 const MotionBox = motion(Box);
 const MotionSimpleGrid = motion(SimpleGrid);
-console.log(dataAnalysis, frontEnd);
 
 const ProjectCard = ({ image, title, description, link }) => {
   const bg = useColorModeValue("white", "gray.700");
@@ -63,26 +64,48 @@ const ProjectCard = ({ image, title, description, link }) => {
   );
 };
 
-const FeProjects = () => (
-  <MotionSimpleGrid
-    columns={{ base: 1, md: 2, lg: 3 }}
-    spacing={8}
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5 }}
-  >
-    {frontEnd.map(({ image, title, description, id, link }) => (
-      <ProjectCard
-        key={id}
-        image={image}
-        title={title}
-        description={description}
-        link={link}
-      />
-    ))}
-  </MotionSimpleGrid>
-);
+const ProjectGrid = ({ projects }) => {
+  const [showAll, setShowAll] = useState(false);
+  const displayedProjects = showAll ? projects : projects.slice(0, 6);
+  const hasMore = projects.length > 5;
+
+  return (
+    <Box>
+      <MotionSimpleGrid
+        columns={{ base: 1, md: 2, lg: 3 }}
+        spacing={8}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        {displayedProjects.map(({ image, title, description, id, link }) => (
+          <ProjectCard
+            key={id}
+            image={image}
+            title={title}
+            description={description}
+            link={link}
+          />
+        ))}
+      </MotionSimpleGrid>
+
+      {hasMore && (
+        <Box textAlign="center" mt={8}>
+          <Button
+            colorScheme="blue"
+            size="lg"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? "Show Less" : "See All"}
+          </Button>
+        </Box>
+      )}
+    </Box>
+  );
+};
+
+const FeProjects = () => <ProjectGrid projects={frontEnd} />;
 
 const DaProjects = () => (
   <MotionBox
@@ -91,31 +114,14 @@ const DaProjects = () => (
     viewport={{ once: true }}
     transition={{ duration: 0.5 }}
   >
-    <MotionSimpleGrid
-      columns={{ base: 1, md: 2, lg: 3 }}
-      spacing={8}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-    >
-      {dataAnalysis.map(({ image, title, description, link, id }) => (
-        <ProjectCard
-          key={id}
-          image={image}
-          title={title}
-          description={description}
-          link={link}
-        />
-      ))}
-    </MotionSimpleGrid>
+    <ProjectGrid projects={dataAnalysis} />
   </MotionBox>
 );
 
 const Projects = () => {
-  const { tab } = useTab(); // 🔄 use context
+  const { tab } = useTab();
   const color = useColorModeValue("gray.800", "white");
-  console.log(tab);
+
   return (
     <Box id="projects" py={20} px={4} bg="gray.50" color={color}>
       <Box maxW="6xl" mx="auto">
@@ -136,7 +142,7 @@ const Projects = () => {
         </MotionBox>
 
         <ProjectLayout>
-          {tab === 1 && <FeProjects projects={frontEnd} />}
+          {tab === 1 && <FeProjects />}
           {tab === 2 && <DaProjects />}
           {![1, 2].includes(tab) && (
             <Box textAlign="center" py={10}>
