@@ -36,7 +36,7 @@ export const frontEnd = [
     link: "https://fazo-crm-app.netlify.app/",
     description:
       "A CRM web application that manages the activities and operations of Fazo",
-    image: "/Fazo-cover.png",
+    image: "/Fazo Logo.png",
   },
   {
     id: 5,

@@ -44,10 +44,11 @@ const ProjectCard = ({ image, title, description, link }) => {
               src={image}
               alt={`Screenshot of ${title}`}
               w="100%"
-              h="100%"
-              objectFit="cover"
+              h="auto"
+              objectFit="contain"
               transition="transform 0.3s"
               _hover={{ transform: "scale(1.05)" }}
+              px="10px"
             />
           </Skeleton>
         </Box>
