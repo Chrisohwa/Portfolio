@@ -33,7 +33,7 @@ export const frontEnd = [
   {
     id: 4,
     title: "Fazo CRM",
-    link: "https://fazo-crm-app.netlify.app/",
+    link: "https://fazo-travels-crm.vercel.app/",
     description:
       "A CRM web application that manages the activities and operations of Fazo",
     image: "/Fazo Logo.png",
